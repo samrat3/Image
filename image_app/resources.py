@@ -69,7 +69,7 @@ def create_new_images(image):
     return images
 
 
-# @shared_task(typing=False)
+@shared_task(typing=False)
 def async_upload_image(image, obj):
     """
     this method is celery linked which runs on async to create 3 different image of different dimensions
