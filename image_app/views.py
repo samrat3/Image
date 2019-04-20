@@ -40,8 +40,7 @@ class ImageViewSet(viewsets.ModelViewSet):
                 raise ValidationError(response)
             obj = ImageModel(**serializer.validated_data)
             obj.save()
-            # async_upload_image.apply_async(args=(fh, obj))
-            async_upload_image(image, obj)
+            async_upload_image.apply_async(args=(image, obj))
             response['success'] = True
             response['message'] = 'Image Uploaded successfully'
             response['data'] = serializer.data
@@ -85,8 +84,7 @@ class ImageViewSet(viewsets.ModelViewSet):
                 image_url = push_to_s3(image)
                 data['horizontal_image'] = image_url
 
-                # async task
-                async_upload_image(image, obj)
+                async_upload_image.apply_async(args=(image, obj))
             serializer = ImageSerializer(instance=obj, data=data, partial=True)
             if serializer.is_valid():
                 serializer.save()
