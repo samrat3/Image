@@ -131,8 +131,8 @@ CELERY_BROKER_URL = 'redis://localhost'
 # AWS configuration
 BUCKET_DOMAIN = 'https://s3.ap-south-1.amazonaws.com/myinsiderimagebucket/'
 S3_DOMAIN = 's3-website.ap-south-1.amazonaws.com'
-AWS_ACCESS_KEY_ID = 'AKIAJBE6NVFPA6TE3MMQ'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = 'AXXXXXXXXXX'
+AWS_SECRET_ACCESS_KEY = 'JXXXXXXXXXXXXXXXXXXXXXXXXXX'
 AWS_STORAGE_BUCKET_NAME = 'myinsiderimagebucket'
 AWS_LOCATION = 'ap-south-1'
 AWS_S3_CUSTOM_DOMAIN = 's3.%s.amazonaws.com' % AWS_LOCATION
